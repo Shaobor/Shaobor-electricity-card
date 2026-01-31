@@ -1,139 +1,132 @@
-import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002F\u002F\u0063\u0064\u006E\u002E\u006A\u0073\u0064\u0065\u006C\u0069\u0076\u0072\u002E\u006E\u0065\u0074\u002F\u0067\u0068\u002F\u006C\u0069\u0074\u002F\u0064\u0069\u0073\u0074\u0040\u0032\u002F\u0063\u006F\u0072\u0065\u002F\u006C\u0069\u0074\u002D\u0063\u006F\u0072\u0065\u002E\u006D\u0069\u006E\u002E\u006A\u0073"; class SgccElectricityCardEditor extends LitElement {
-    static get properties() { return { "hass": { '\u0074\u0079\u0070\u0065': Object }, '\u0063\u006F\u006E\u0066\u0069\u0067': { "type": Object } }; } constructor() { super(); this['\u0063\u006F\u006E\u0066\u0069\u0067'] = {}; this['\u005F\u0068\u0061\u0073\u0073'] = null; this['\u005F\u0073\u0063\u0068\u0065\u006D\u0061'] = [{ "name": "\u0074\u0069\u0074\u006C\u0065", '\u006C\u0061\u0062\u0065\u006C': '标题 (可选)', "selector": { "text": {} } }, { '\u006E\u0061\u006D\u0065': "\u0065\u006E\u0074\u0069\u0074\u0079", "label": "\u7535\u8D39\u4FE1\u606F\u5B9E\u4F53\u0020\u0028\u4F59\u989D\u002F\u672C\u6708\u002F\u65E5\u7528\u0029", "selector": { '\u0065\u006E\u0074\u0069\u0074\u0079': { "domain": "\u0073\u0065\u006E\u0073\u006F\u0072" } } }, { '\u006E\u0061\u006D\u0065': 'usage_entity', "label": '电量信息实体 (年度阶梯)', '\u0073\u0065\u006C\u0065\u0063\u0074\u006F\u0072': { '\u0065\u006E\u0074\u0069\u0074\u0079': { "domain": "\u0073\u0065\u006E\u0073\u006F\u0072" } } }, { "name": "\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079", '\u006C\u0061\u0062\u0065\u006C': "\u65E5\u7528\u7535\u5B9E\u4F53", '\u0073\u0065\u006C\u0065\u0063\u0074\u006F\u0072': { '\u0065\u006E\u0074\u0069\u0074\u0079': { "domain": "\u0073\u0065\u006E\u0073\u006F\u0072" } } }, { '\u006E\u0061\u006D\u0065': "\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0065\u006E\u0074\u0069\u0074\u0079", '\u006C\u0061\u0062\u0065\u006C': "\u7F34\u8D39\u8BB0\u5F55\u5B9E\u4F53\u0020\u0028\u53EF\u9009\u0029", '\u0073\u0065\u006C\u0065\u0063\u0074\u006F\u0072': { "entity": { '\u0064\u006F\u006D\u0061\u0069\u006E': 'sensor' } } }, { "name": 'enable_daily_calendar', "label": "\u5F00\u542F\u7528\u7535\u65E5\u5386\u529F\u80FD", '\u0073\u0065\u006C\u0065\u0063\u0074\u006F\u0072': { "boolean": {} } }]; } setConfig(config) { this['\u0063\u006F\u006E\u0066\u0069\u0067'] = config ? { ...config } : {}; this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } _handleFormValueChanged(ev) { ev['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E'](); var _0x_0xfe5 = (388909 ^ 388904) + (741819 ^ 741822); const value = ev['\u0064\u0065\u0074\u0061\u0069\u006C']['\u0076\u0061\u006C\u0075\u0065']; _0x_0xfe5 = (102898 ^ 102903) + (563159 ^ 563159); if (!value) { return; } if (this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0074\u0069\u0074\u0079'] === value['\u0065\u006E\u0074\u0069\u0074\u0079'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] === value['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] === value['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] === value['\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] === value['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0065\u006E\u0074\u0069\u0074\u0079'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0074\u0069\u0074\u006C\u0065'] === value['\u0074\u0069\u0074\u006C\u0065'] && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0061\u0062\u006C\u0065\u005F\u0064\u0061\u0069\u006C\u0079\u005F\u0063\u0061\u006C\u0065\u006E\u0064\u0061\u0072'] === value['\u0065\u006E\u0061\u0062\u006C\u0065\u005F\u0064\u0061\u0069\u006C\u0079\u005F\u0063\u0061\u006C\u0065\u006E\u0064\u0061\u0072']) { return; } this['\u0063\u006F\u006E\u0066\u0069\u0067'] = value; const event = new Event("\u0063\u006F\u006E\u0066\u0069\u0067\u002D\u0063\u0068\u0061\u006E\u0067\u0065\u0064", { '\u0062\u0075\u0062\u0062\u006C\u0065\u0073': !![], '\u0063\u006F\u006D\u0070\u006F\u0073\u0065\u0064': !![] }); event['\u0064\u0065\u0074\u0061\u0069\u006C'] = { "config": value }; this['\u0064\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u0045\u0076\u0065\u006E\u0074'](event); } _computeLabel(schema) { return schema['\u006C\u0061\u0062\u0065\u006C'] || schema['\u006E\u0061\u006D\u0065']; } render() {
-        if (!this['\u0068\u0061\u0073\u0073']) { return html``; } return html`
+// Shaobor Electricity Card - Optimized Build
+
+import { LitElement as pt, html as r, css as gt } from "https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js"; var K = class extends pt {
+  static get properties() { return { hass: { type: Object }, config: { type: Object } } } constructor() { super(), this.config = {}, this._hass = null, this._schema = [{ name: "title", label: "\u6807\u9898 (\u53EF\u9009)", selector: { text: {} } }, { name: "entity", label: "\u7535\u8D39\u4FE1\u606F\u5B9E\u4F53 (\u4F59\u989D/\u672C\u6708/\u65E5\u7528)", selector: { entity: { domain: "sensor" } } }, { name: "usage_entity", label: "\u7535\u91CF\u4FE1\u606F\u5B9E\u4F53 (\u5E74\u5EA6\u9636\u68AF)", selector: { entity: { domain: "sensor" } } }, { name: "daily_usage_entity", label: "\u65E5\u7528\u7535\u5B9E\u4F53", selector: { entity: { domain: "sensor" } } }, { name: "bill_entity", label: "\u7535\u8D39\u8D26\u5355\u5B9E\u4F53 (\u4E0A\u6708)", selector: { entity: { domain: "sensor" } } }, { name: "payment_entity", label: "\u7F34\u8D39\u8BB0\u5F55\u5B9E\u4F53 (\u53EF\u9009)", selector: { entity: { domain: "sensor" } } }, { name: "enable_daily_calendar", label: "\u5F00\u542F\u7528\u7535\u65E5\u5386\u529F\u80FD", selector: { boolean: {} } }] } setConfig(n) { this.config = n ? { ...n } : {}, this.requestUpdate() } _handleFormValueChanged(n) { n.stopPropagation(); let i = n.detail.value; if (!i || this.config.entity === i.entity && this.config.usage_entity === i.usage_entity && this.config.usage_entity === i.usage_entity && this.config.daily_usage_entity === i.daily_usage_entity && this.config.bill_entity === i.bill_entity && this.config.payment_entity === i.payment_entity && this.config.title === i.title && this.config.enable_daily_calendar === i.enable_daily_calendar) return; this.config = i; let u = new Event("config-changed", { bubbles: !0, composed: !0 }); u.detail = { config: i }, this.dispatchEvent(u) } _computeLabel(n) { return n.label || n.name } render() {
+    return this.hass ? r`
       <div class="card-config">
         <ha-form
-          .hass=${this['\u0068\u0061\u0073\u0073']}
-          .data=${this['\u0063\u006F\u006E\u0066\u0069\u0067']}
-          .schema=${this['\u005F\u0073\u0063\u0068\u0065\u006D\u0061']}
-          .computeLabel=${this['\u005F\u0063\u006F\u006D\u0070\u0075\u0074\u0065\u004C\u0061\u0062\u0065\u006C']}
-          @value-changed=${this['\u005F\u0068\u0061\u006E\u0064\u006C\u0065\u0046\u006F\u0072\u006D\u0056\u0061\u006C\u0075\u0065\u0043\u0068\u0061\u006E\u0067\u0065\u0064']}
+          .hass=${this.hass}
+          .data=${this.config}
+          .schema=${this._schema}
+          .computeLabel=${this._computeLabel}
+          @value-changed=${this._handleFormValueChanged}
         ></ha-form>
       </div>
-    `;
-    } static get styles() {
-        return css`
+    `: r``
+  } static get styles() {
+    return gt`
       .card-config {
         padding: 16px;
       }
-    `;
-    }
-} customElements['\u0064\u0065\u0066\u0069\u006E\u0065']("\u0073\u0067\u0063\u0063\u002D\u0065\u006C\u0065\u0063\u0074\u0072\u0069\u0063\u0069\u0074\u0079\u002D\u0063\u0061\u0072\u0064\u002D\u0065\u0064\u0069\u0074\u006F\u0072", SgccElectricityCardEditor); class SgccElectricityCard extends LitElement {
-    static get properties() { return { "hass": { "type": Object }, '\u0063\u006F\u006E\u0066\u0069\u0067': { '\u0074\u0079\u0070\u0065': Object }, '\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079': { "type": Boolean }, '\u005F\u0073\u0068\u006F\u0077\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079': { '\u0074\u0079\u0070\u0065': Boolean } }; } constructor() { super(); this['\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] = false; this['\u005F\u0073\u0068\u006F\u0077\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] = false; } static getConfigElement() { return document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("\u0073\u0067\u0063\u0063\u002D\u0065\u006C\u0065\u0063\u0074\u0072\u0069\u0063\u0069\u0074\u0079\u002D\u0063\u0061\u0072\u0064\u002D\u0065\u0064\u0069\u0074\u006F\u0072"); } static getStubConfig() { return { '\u0065\u006E\u0074\u0069\u0074\u0079': "\u0073\u0065\u006E\u0073\u006F\u0072\u002E\u0073\u0067\u0063\u0063\u005F\u0062\u0061\u006C\u0061\u006E\u0063\u0065" }; } setConfig(config) { if (!config['\u0065\u006E\u0074\u0069\u0074\u0079']) { throw new Error("ytitne \u4E49\u5B9A\u8BF7".split("").reverse().join("")); } this['\u0063\u006F\u006E\u0066\u0069\u0067'] = config; this['\u005F\u0065\u006E\u0061\u0062\u006C\u0065\u0043\u0061\u006C\u0065\u006E\u0064\u0061\u0072'] = config['\u0065\u006E\u0061\u0062\u006C\u0065\u005F\u0064\u0061\u0069\u006C\u0079\u005F\u0063\u0061\u006C\u0065\u006E\u0064\u0061\u0072'] !== false; this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } getCardSize() { return 329788 ^ 329786; } _toggleHistory(e) { if (e) e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E'](); this['\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] = !this['\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079']; if (!this['\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079']) { this['\u005F\u0073\u0065\u006C\u0065\u0063\u0074\u0065\u0064\u0044\u0061\u0079'] = null; } this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } _togglePayHistory(e) { if (e) e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E'](); this['\u005F\u0073\u0068\u006F\u0077\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] = !this['\u005F\u0073\u0068\u006F\u0077\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079']; this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } _showDayDetail(e, data, dateKey) { if (e) e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E'](); console['\u006C\u006F\u0067'](":ataD yaD detceleS :draC CCGS".split("").reverse().join(""), data); this['\u005F\u0073\u0065\u006C\u0065\u0063\u0074\u0065\u0064\u0044\u0061\u0079'] = { "data": data, "dateKey": dateKey }; this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } _closeDayDetail(e) { if (e) e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E'](); this['\u005F\u0073\u0065\u006C\u0065\u0063\u0074\u0065\u0064\u0044\u0061\u0079'] = null; this['\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0055\u0070\u0064\u0061\u0074\u0065'](); } render() {
-        if (!this['\u0068\u0061\u0073\u0073'] || !this['\u0063\u006F\u006E\u0066\u0069\u0067']) { return html``; } var _0xd9gbf = (160747 ^ 160739) + (303389 ^ 303390); const mainEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0074\u0069\u0074\u0079']]; _0xd9gbf = (134724 ^ 134726) + (859808 ^ 859815); if (!mainEntity) {
-            return html`
+    `}
+}; customElements.define("sgcc-electricity-card-editor", K); var W = class extends pt {
+  static get properties() { return { hass: { type: Object }, config: { type: Object }, _showHistory: { type: Boolean }, _showPayHistory: { type: Boolean } } } constructor() { super(), this._showHistory = !1, this._showPayHistory = !1 } static getConfigElement() { return document.createElement("sgcc-electricity-card-editor") } static getStubConfig() { return { entity: "sensor.sgcc_balance" } } setConfig(n) { if (!n.entity) throw new Error("\u8BF7\u5B9A\u4E49 entity"); this.config = n, this._enableCalendar = n.enable_daily_calendar !== !1, this.requestUpdate() } getCardSize() { return 6 } _toggleHistory(n) { n && n.stopPropagation(), this._showHistory = !this._showHistory, this._showHistory || (this._selectedDay = null), this.requestUpdate() } _togglePayHistory(n) { n && n.stopPropagation(), this._showPayHistory = !this._showPayHistory, this.requestUpdate() } _showDayDetail(n, i, u) { n && n.stopPropagation(), console.log("SGCC Card: Selected Day Data:", i), this._selectedDay = { data: i, dateKey: u }, this.requestUpdate() } _closeDayDetail(n) { n && n.stopPropagation(), this._selectedDay = null, this.requestUpdate() } render() {
+    if (!this.hass || !this.config) return r``; let n = this.hass.states[this.config.entity]; if (!n) return r`
         <ha-card style="padding: 16px; color: white; background: #ef4444;">
-          找不到实体: ${this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0074\u0069\u0074\u0079']}
+          找不到实体: ${this.config.entity}
         </ha-card>
-      `;
-        } const attrs = mainEntity['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073'] || {}; var _0x404c0e; let balance = 485725 ^ 485725; _0x404c0e = 901570 ^ 901579; let monthlyUsage = 207079 ^ 207079; let monthlyCost = 633142 ^ 633142; var _0x739ab; let currentPrice = 591624 ^ 591624; _0x739ab = (478846 ^ 478844) + (857467 ^ 857458); let tierLevel = "\u672A\u77E5"; let paymentDeadline = ''; let updateTime = ''; var _0x543c; let lastMonthCost = 192435 ^ 192435; _0x543c = (475050 ^ 475051) + (547137 ^ 547144); if (attrs['\u0065\u0073\u0074\u0069\u0041\u006D\u0074'] || attrs['\u0065\u0073\u0074\u0069\u005F\u0061\u006D\u0074'] || attrs['\u0065\u0073\u0074\u0069\u0061\u006D\u0074']) { lastMonthCost = parseFloat(attrs['\u0065\u0073\u0074\u0069\u0041\u006D\u0074'] || attrs['\u0065\u0073\u0074\u0069\u005F\u0061\u006D\u0074'] || attrs['\u0065\u0073\u0074\u0069\u0061\u006D\u0074']); } var _0xe58eg; let totalYearPq = 985790 ^ 985790; _0xe58eg = 447361 ^ 447366; var _0xad96e = (548880 ^ 548880) + (132112 ^ 132113); let totalYearCost = 303978 ^ 303978; _0xad96e = '\u0065\u0066\u0069\u0071\u006C\u0066'; var _0xffdbf; let yearlyUsage = 444755 ^ 444755; _0xffdbf = 614640 ^ 614640; if (this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079']) { const usageState = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079']]; if (usageState) { var _0xb88d; const uAttrs = usageState['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073']; _0xb88d = '\u0067\u006A\u0068\u0064\u0070\u0070'; var _0xec2a5e; let yearlyUsageFromState = parseFloat(usageState['\u0073\u0074\u0061\u0074\u0065']); _0xec2a5e = '\u0063\u006E\u0062\u0070\u0071\u0066'; if (!isNaN(yearlyUsageFromState)) yearlyUsage = yearlyUsageFromState; if (uAttrs['\u0074\u006F\u0074\u0061\u006C\u0065\u006C\u0065\u006E\u0075\u006D'] !== undefined) totalYearPq = parseFloat(uAttrs['\u0074\u006F\u0074\u0061\u006C\u0065\u006C\u0065\u006E\u0075\u006D']); if (uAttrs['\u0074\u006F\u0074\u0061\u006C\u0065\u006C\u0065\u0063\u006F\u0073\u0074'] !== undefined) totalYearCost = parseFloat(uAttrs['\u0074\u006F\u0074\u0061\u006C\u0065\u006C\u0065\u0063\u006F\u0073\u0074']); if (uAttrs['\u0074\u0069\u0065\u0072\u005F\u006C\u0065\u0076\u0065\u006C'] || uAttrs['\u0074\u0069\u0065\u0072\u004C\u0065\u0076\u0065\u006C']) { tierLevel = uAttrs['\u0074\u0069\u0065\u0072\u005F\u006C\u0065\u0076\u0065\u006C'] || uAttrs['\u0074\u0069\u0065\u0072\u004C\u0065\u0076\u0065\u006C']; } var _0x9ccb2g; const list = uAttrs['\u006D\u006F\u0074\u0068\u0065\u006C\u0065\u006C\u0069\u0073\u0074'] || uAttrs['\u006D\u006F\u006E\u0074\u0068\u0045\u006C\u0065\u004C\u0069\u0073\u0074'] || []; _0x9ccb2g = (631552 ^ 631557) + (676631 ^ 676630); if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](list) && list['\u006C\u0065\u006E\u0067\u0074\u0068'] > (230115 ^ 230115)) { var _0x9a5b = (222588 ^ 222587) + (111725 ^ 111717); const now = new Date(); _0x9a5b = (112563 ^ 112571) + (816336 ^ 816341); let year = now['\u0067\u0065\u0074\u0046\u0075\u006C\u006C\u0059\u0065\u0061\u0072'](); let month = now['\u0067\u0065\u0074\u004D\u006F\u006E\u0074\u0068'](); if (month === (325537 ^ 325537)) { month = 623259 ^ 623255; year -= 806649 ^ 806648; } const targetStr = `${year}${month['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067']()['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](380849 ^ 380851, "\u0030")}`; const match = list['\u0066\u0069\u006E\u0064'](item => item['\u006D\u006F\u006E\u0074\u0068'] == targetStr); if (match) { monthlyUsage = parseFloat(match['\u006D\u006F\u006E\u0074\u0068\u0045\u006C\u0065\u004E\u0075\u006D'] || 387334 ^ 387334); lastMonthCost = parseFloat(match['\u006D\u006F\u006E\u0074\u0068\u0045\u006C\u0065\u0043\u006F\u0073\u0074'] || 994921 ^ 994921); } } } } else { totalYearPq = parseFloat(attrs['\u0079\u0065\u0061\u0072\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065'] || attrs['\u0079\u0065\u0061\u0072\u006C\u0079\u0055\u0073\u0061\u0067\u0065'] || attrs['\u0074\u006F\u0074\u0061\u006C\u0045\u006C\u0065\u004E\u0075\u006D']) || 238932 ^ 238932; totalYearCost = parseFloat(attrs['\u0074\u006F\u0074\u0061\u006C\u0045\u006C\u0065\u0043\u006F\u0073\u0074'] || attrs['\u0074\u006F\u0074\u0061\u006C\u005F\u0065\u006C\u0065\u005F\u0063\u006F\u0073\u0074']) || 413138 ^ 413138; } if (yearlyUsage === (217181 ^ 217181) && totalYearPq > (209772 ^ 209772)) { yearlyUsage = totalYearPq; } if (attrs['\u0070\u0072\u0065\u0070\u0061\u0079\u0062\u0061\u006C'] !== undefined || attrs['\u0070\u0072\u0065\u0070\u0061\u0079\u0042\u0061\u006C'] !== undefined) { balance = parseFloat(attrs['\u0073\u0075\u006D\u006D\u006F\u006E\u0065\u0079'] || attrs['\u0073\u0075\u006D\u004D\u006F\u006E\u0065\u0079'] || mainEntity['\u0073\u0074\u0061\u0074\u0065']) || 920553 ^ 920553; if (monthlyUsage === (226877 ^ 226877)) { monthlyUsage = parseFloat(attrs['\u0074\u006F\u0074\u0061\u006C\u0070\u0071'] || attrs['\u0074\u006F\u0074\u0061\u006C\u0050\u0071']) || 338580 ^ 338580; } monthlyCost = parseFloat(attrs['\u0070\u0072\u0065\u0070\u0061\u0079\u0062\u0061\u006C'] || attrs['\u0070\u0072\u0065\u0070\u0061\u0079\u0042\u0061\u006C']) || 714408 ^ 714408; updateTime = attrs['\u0061\u006D\u0074\u0074\u0069\u006D\u0065'] || attrs['\u0061\u006D\u0074\u0054\u0069\u006D\u0065'] || ''; currentPrice = parseFloat(attrs['\u0063\u0075\u0072\u0072\u0065\u006E\u0074\u005F\u0070\u0072\u0069\u0063\u0065'] || attrs['\u0063\u0075\u0072\u0072\u0065\u006E\u0074\u0050\u0072\u0069\u0063\u0065']) || 283142 ^ 283142; if (tierLevel === "\u672A\u77E5" && (attrs['\u0074\u0069\u0065\u0072\u005F\u006C\u0065\u0076\u0065\u006C'] || attrs['\u0074\u0069\u0065\u0072\u004C\u0065\u0076\u0065\u006C'])) { tierLevel = attrs['\u0074\u0069\u0065\u0072\u005F\u006C\u0065\u0076\u0065\u006C'] || attrs['\u0074\u0069\u0065\u0072\u004C\u0065\u0076\u0065\u006C']; } if (tierLevel === "\u77E5\u672A".split("").reverse().join("") && yearlyUsage > (959392 ^ 959392)) { if (yearlyUsage > (664195 ^ 666771)) { tierLevel = "\u6863\u4E09".split("").reverse().join(""); } else if (yearlyUsage > (416231 ^ 413831)) { tierLevel = "\u4E8C\u6863"; } else { tierLevel = "\u4E00\u6863"; } } if (currentPrice === (751481 ^ 751481)) { const basePrice = 0.51; if (tierLevel['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u4E09\u6863")) { currentPrice = basePrice + 0.3; } else if (tierLevel['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u4E8C\u6863")) { currentPrice = basePrice + 0.05; } else { currentPrice = basePrice; } } paymentDeadline = attrs['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0064\u0065\u0061\u0064\u006C\u0069\u006E\u0065'] || attrs['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u0044\u0065\u0061\u0064\u006C\u0069\u006E\u0065'] || ''; } else { const usageEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']["\u0073\u0065\u006E\u0073\u006F\u0072\u002E\u0073\u0067\u0063\u0063\u005F\u006D\u006F\u006E\u0074\u0068\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065"]; const costEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']["\u0073\u0065\u006E\u0073\u006F\u0072\u002E\u0073\u0067\u0063\u0063\u005F\u006D\u006F\u006E\u0074\u0068\u006C\u0079\u005F\u0063\u006F\u0073\u0074"]; var _0x83a = (726006 ^ 726006) + (681337 ^ 681338); const priceEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']["\u0073\u0065\u006E\u0073\u006F\u0072\u002E\u0073\u0067\u0063\u0063\u005F\u0063\u0075\u0072\u0072\u0065\u006E\u0074\u005F\u0070\u0072\u0069\u0063\u0065"]; _0x83a = 524671 ^ 524664; const tierEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']["\u0073\u0065\u006E\u0073\u006F\u0072\u002E\u0073\u0067\u0063\u0063\u005F\u0074\u0069\u0065\u0072\u005F\u006C\u0065\u0076\u0065\u006C"]; var _0xccg = (988565 ^ 988561) + (297080 ^ 297083); const yearlyEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']['sensor.sgcc_yearly_usage']; _0xccg = (595435 ^ 595439) + (646504 ^ 646509); var _0xa65a; const deadlineEntity = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073']['sensor.sgcc_payment_deadline']; _0xa65a = '\u006D\u0063\u0061\u006F\u0070\u0071'; balance = parseFloat(mainEntity['\u0073\u0074\u0061\u0074\u0065']) || 724025 ^ 724025; monthlyUsage = parseFloat(usageEntity?.state) || 151752 ^ 151752; monthlyCost = parseFloat(costEntity?.state) || 456921 ^ 456921; currentPrice = parseFloat(priceEntity?.state) || 593904 ^ 593904; tierLevel = tierEntity?.state || "\u672A\u77E5"; yearlyUsage = parseFloat(yearlyEntity?.state) || 906466 ^ 906466; paymentDeadline = deadlineEntity?.state || ''; } const tier1Max = 326518 ^ 326798; var _0xf2e17d = (941309 ^ 941304) + (837854 ^ 837854); const tier2Max = 235620 ^ 234580; _0xf2e17d = (298202 ^ 298202) + (976419 ^ 976423); if (tierLevel === "\u77E5\u672A".split("").reverse().join("") && yearlyUsage > (786616 ^ 786616)) { if (yearlyUsage > tier2Max) { tierLevel = "\u4E09\u6863"; } else if (yearlyUsage > tier1Max) { tierLevel = "\u4E8C\u6863"; } else { tierLevel = "\u4E00\u6863"; } } const tier1Usage = Math['\u006D\u0069\u006E'](yearlyUsage, tier1Max); var _0x7ff = (739479 ^ 739474) + (756237 ^ 756233); const tier2Usage = Math['\u006D\u0069\u006E'](Math['\u006D\u0061\u0078'](yearlyUsage - tier1Max, 857522 ^ 857522), tier2Max - tier1Max); _0x7ff = (320112 ^ 320115) + (642108 ^ 642101); var _0x2e858e = (330297 ^ 330289) + (786599 ^ 786606); const tier3Usage = Math['\u006D\u0061\u0078'](yearlyUsage - tier2Max, 930991 ^ 930991); _0x2e858e = 787128 ^ 787128; const tier1Percent = tier1Usage / tier1Max * (990075 ^ 989983); const tier2Percent = tier2Usage / (tier2Max - tier1Max) * (870650 ^ 870558); var _0x95d7f = (377565 ^ 377557) + (420172 ^ 420172); const tier3Percent = tier3Usage > (781954 ^ 781954) ? 975936 ^ 975986 : 651054 ^ 651054; _0x95d7f = 506365 ^ 506357; let deadlineText = paymentDeadline; if (paymentDeadline) { const deadline = new Date(paymentDeadline); var _0x7d5ba; const now = new Date(); _0x7d5ba = "fmimid".split("").reverse().join(""); const daysLeft = Math['\u0063\u0065\u0069\u006C']((deadline - now) / ((153018 ^ 153170) * (240697 ^ 240645) * (892755 ^ 892783) * (401133 ^ 401141))); if (daysLeft >= (499016 ^ 499016)) { deadlineText = `${paymentDeadline} (${daysLeft}天后)`; } } var _0x6ab = (966673 ^ 966673) + (406179 ^ 406180); let dailyUsage = "\u0030"; _0x6ab = (831855 ^ 831848) + (535563 ^ 535566); var _0x6918df = (635564 ^ 635561) + (764653 ^ 764645); let rawDailyList = []; _0x6918df = '\u006D\u0066\u0064\u006D\u006D\u006D'; const dailyEntityId = this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079']; var _0xaacadf = (130443 ^ 130441) + (315142 ^ 315142); const isValidUsage = val => { return val !== undefined && val !== null && val !== '' && val !== "\u002D" && !isNaN(parseFloat(val)); }; _0xaacadf = (927453 ^ 927451) + (368716 ^ 368719); const getUsageFromList = attributes => { var _0x2_0x3d9 = (864598 ^ 864607) + (668823 ^ 668816); const list = attributes['\u0073\u0065\u0076\u0065\u006E\u0065\u006C\u0065\u006C\u0069\u0073\u0074'] || attributes['\u0073\u0065\u0076\u0065\u006E\u0045\u006C\u0065\u004C\u0069\u0073\u0074'] || attributes['\u0073\u0065\u0076\u0065\u006E\u005F\u0065\u006C\u0065\u005F\u006C\u0069\u0073\u0074'] || []; _0x2_0x3d9 = "fkonhn".split("").reverse().join(""); if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](list) && list['\u006C\u0065\u006E\u0067\u0074\u0068'] > (310497 ^ 310497)) { return { '\u006C\u0069\u0073\u0074': list }; } return null; }; if (dailyEntityId && this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][dailyEntityId]) { var _0x36eg = (383865 ^ 383865) + (183761 ^ 183760); const dailyState = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][dailyEntityId]; _0x36eg = '\u0063\u0061\u0070\u006D\u0071\u0065'; var _0xfb265a; const dAttrs = dailyState['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073']; _0xfb265a = 161485 ^ 161485; const listResult = getUsageFromList(dAttrs); if (listResult) { rawDailyList = listResult['\u006C\u0069\u0073\u0074']; for (const item of rawDailyList) { if (isValidUsage(item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'])) { dailyUsage = item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071']; break; } } } else if (isValidUsage(dailyState['\u0073\u0074\u0061\u0074\u0065'])) { dailyUsage = dailyState['\u0073\u0074\u0061\u0074\u0065']; } else { dailyUsage = dAttrs['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'] || dAttrs['\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065'] || dAttrs['\u0064\u0061\u0069\u006C\u0079\u0055\u0073\u0061\u0067\u0065'] || "\u0030"; } } else { var _0x66d = (400354 ^ 400355) + (387460 ^ 387458); const listResult = getUsageFromList(attrs); _0x66d = (831852 ^ 831849) + (540477 ^ 540474); if (listResult) { rawDailyList = listResult['\u006C\u0069\u0073\u0074']; for (const item of rawDailyList) { if (isValidUsage(item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'])) { dailyUsage = item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071']; break; } } } else { dailyUsage = attrs['\u0064\u0061\u0069\u006C\u0079\u005F\u0075\u0073\u0061\u0067\u0065'] || attrs['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'] || attrs['\u0064\u0061\u0069\u006C\u0079\u0055\u0073\u0061\u0067\u0065'] || "\u0030"; } } let estimatedDaysText = ''; const dailyUsageNum = parseFloat(dailyUsage); if (balance > (339064 ^ 339064) && dailyUsageNum > (900923 ^ 900923) && currentPrice > (564238 ^ 564238)) { const dailyCost = dailyUsageNum * currentPrice; const days = Math['\u0066\u006C\u006F\u006F\u0072'](balance / dailyCost); if (days < (347668 ^ 347635)) { estimatedDaysText = `预计可用 ${days} 天`; } } const getPayList = a => { if (!a) return []; return a['\u0070\u0061\u0079\u006C\u0069\u0073\u0074'] || a['\u0070\u0061\u0079\u005F\u0068\u0069\u0073\u0074\u006F\u0072\u0079'] || a['\u0070\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] || a['\u0070\u0061\u0079\u005F\u006C\u0069\u0073\u0074'] || a['\u0070\u0061\u0079\u004C\u0069\u0073\u0074'] || a['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u006C\u0069\u0073\u0074'] || a['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] || []; }; var _0x19c32g = (223110 ^ 223104) + (559180 ^ 559182); let payList = []; _0x19c32g = (648027 ^ 648024) + (924773 ^ 924774); if (this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0065\u006E\u0074\u0069\u0074\u0079']) { var _0xgc52b = (977905 ^ 977907) + (870968 ^ 870970); const payState = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0070\u0061\u0079\u006D\u0065\u006E\u0074\u005F\u0065\u006E\u0074\u0069\u0074\u0079']]; _0xgc52b = '\u006D\u006B\u006F\u0068\u0063\u006F'; if (payState) { console['\u006C\u006F\u0067']("\u0053\u0047\u0043\u0043\u0020\u0043\u0061\u0072\u0064\u0020\u0028\u0044\u0065\u0062\u0075\u0067\u0029\u003A\u0020\u0050\u0061\u0079\u006D\u0065\u006E\u0074\u0020\u0045\u006E\u0074\u0069\u0074\u0079\u0020\u0041\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073\u003A", payState['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073']); payList = getPayList(payState['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073']); console['\u006C\u006F\u0067']("\u0053\u0047\u0043\u0043\u0020\u0043\u0061\u0072\u0064\u0020\u0028\u0044\u0065\u0062\u0075\u0067\u0029\u003A\u0020\u0045\u0078\u0074\u0072\u0061\u0063\u0074\u0065\u0064\u0020\u0050\u0061\u0079\u004C\u0069\u0073\u0074\u003A", payList); } } if ((!payList || payList['\u006C\u0065\u006E\u0067\u0074\u0068'] === (184666 ^ 184666)) && this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079']) { var _0x367d4e = (594521 ^ 594526) + (961644 ^ 961640); const uState = this['\u0068\u0061\u0073\u0073']['\u0073\u0074\u0061\u0074\u0065\u0073'][this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0075\u0073\u0061\u0067\u0065\u005F\u0065\u006E\u0074\u0069\u0074\u0079']]; _0x367d4e = "lbkodh".split("").reverse().join(""); if (uState) { const list = getPayList(uState['\u0061\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065\u0073']); if (list && list['\u006C\u0065\u006E\u0067\u0074\u0068'] > (437010 ^ 437010)) payList = list; } } if (!payList || payList['\u006C\u0065\u006E\u0067\u0074\u0068'] === (100945 ^ 100945)) { var _0xebg2e = (428855 ^ 428863) + (914755 ^ 914756); const list = getPayList(attrs); _0xebg2e = 758075 ^ 758067; if (list && list['\u006C\u0065\u006E\u0067\u0074\u0068'] > (361682 ^ 361682)) payList = list; } var _0x632b4b = (683509 ^ 683507) + (783781 ^ 783779); let payHistoryHtml = html``; _0x632b4b = 153120 ^ 153125; if (Array['\u0069\u0073\u0041\u0072\u0072\u0061\u0079'](payList) && payList['\u006C\u0065\u006E\u0067\u0074\u0068'] > (413603 ^ 413603)) {
-            const sorted = [...payList]['\u0073\u006F\u0072\u0074']((a, b) => { const da = new Date(a['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || a['\u0079\u006D\u0064'] || a['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || a['\u0064\u0061\u0074\u0065'] || 299384 ^ 299384); const db = new Date(b['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || b['\u0079\u006D\u0064'] || b['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || b['\u0064\u0061\u0074\u0065'] || 701475 ^ 701475); return db - da; })['\u0073\u006C\u0069\u0063\u0065'](662653 ^ 662653, 226607 ^ 226604); var _0x1d_0xg00; const itemsHtml = sorted['\u006D\u0061\u0070'](item => {
-                const date = item['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || item['\u0079\u006D\u0064'] || item['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || item['\u0064\u0061\u0074\u0065'] || "\u671F\u65E5\u77E5\u672A".split("").reverse().join(""); var _0x162b = (656581 ^ 656582) + (922963 ^ 922971); const dateStr = date['\u006C\u0065\u006E\u0067\u0074\u0068'] > (592783 ^ 592773) ? date['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](101223 ^ 101223, 841135 ^ 841125) : date; _0x162b = 180040 ^ 180044; const amt = item['\u0072\u0063\u0076\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u005F\u0061\u006D\u0074'] || item['\u006D\u006F\u006E\u0065\u0079'] || item['\u0061\u006D\u0074'] || 589400 ^ 589400; return html`
+      `; let i = n.attributes || {}, u = 0, S = 0, X = 0, h = 0, g = "\u672A\u77E5", P = "", L = "", H = 0, F = 0, A = 0, y = 0; if (this.config.usage_entity) { let t = this.hass.states[this.config.usage_entity]; if (t) { let e = t.attributes, a = parseFloat(t.state); isNaN(a) || (y = a), e.totalelenum !== void 0 && (F = parseFloat(e.totalelenum)), e.totalelecost !== void 0 && (A = parseFloat(e.totalelecost)), (e.tier_level || e.tierLevel) && (g = e.tier_level || e.tierLevel) } } else F = parseFloat(i.yearly_usage || i.yearlyUsage || i.totalEleNum) || 0, A = parseFloat(i.totalEleCost || i.total_ele_cost) || 0; if (A === 0 && (i.estiAmt || i.esti_amt || i.estiamt) && (A = parseFloat(i.estiAmt || i.esti_amt || i.estiamt)), this.config.daily_usage_entity) { let t = this.hass.states[this.config.daily_usage_entity]; if (t && t.attributes) { let e = t.attributes.totalPq || t.attributes.totalpq; if (e != null) { let a = parseFloat(e); isNaN(a) || (y = a, F = a) } } } if (this.config.bill_entity) { let t = this.hass.states[this.config.bill_entity]; if (t && t.attributes) try { let e = t.attributes; e.data && e.data.list ? e = e.data : e.data && e.data.data && e.data.data.list && (e = e.data.data); let a = null; if (e.list ? a = e.list : e.data && e.data.list && (a = e.data.list), a && Array.isArray(a) && a.length > 0) { let d = a[0].electricParticulars; if (d) { let c = parseFloat(d.totalPq), s = parseFloat(d.totalAmount); !isNaN(c) && c > 0 && (S = c), !isNaN(s) && s > 0 && (H = s) } } } catch (e) { console.error("SGCC Card: Error parsing bill entity", e) } } if (y === 0 && F > 0 && (y = F), i.prepaybal !== void 0 || i.prepayBal !== void 0) u = parseFloat(i.summoney || i.sumMoney || n.state) || 0, X = parseFloat(i.prepaybal || i.prepayBal) || 0, L = i.amttime || i.amtTime || "", h = parseFloat(i.current_price || i.currentPrice) || 0, g === "\u672A\u77E5" && (i.tier_level || i.tierLevel) && (g = i.tier_level || i.tierLevel), g === "\u672A\u77E5" && y > 0 && (y > 3600 ? g = "\u4E09\u6863" : y > 2400 ? g = "\u4E8C\u6863" : g = "\u4E00\u6863"), h === 0 && (g.includes("\u4E09\u6863") ? h = .51 + .3 : g.includes("\u4E8C\u6863") ? h = .51 + .05 : h = .51), P = i.payment_deadline || i.paymentDeadline || ""; else { let t = this.hass.states["sensor.sgcc_monthly_usage"], e = this.hass.states["sensor.sgcc_monthly_cost"], a = this.hass.states["sensor.sgcc_current_price"], d = this.hass.states["sensor.sgcc_tier_level"], c = this.hass.states["sensor.sgcc_yearly_usage"], s = this.hass.states["sensor.sgcc_payment_deadline"]; u = parseFloat(n.state) || 0, h = parseFloat(a?.state) || 0, g = d?.state || "\u672A\u77E5", y = parseFloat(c?.state) || 0, P = s?.state || "" } let v = 2040, z = 3120; g === "\u672A\u77E5" && y > 0 && (y > z ? g = "\u4E09\u6863" : y > v ? g = "\u4E8C\u6863" : g = "\u4E00\u6863"); let ft = Math.min(y, v), ht = Math.min(Math.max(y - v, 0), z - v), J = Math.max(y - z, 0), mt = ft / v * 100, ut = ht / (z - v) * 100, _t = J > 0 ? 50 : 0, bt = P; if (P) { let t = new Date(P), a = Math.ceil((t - new Date) / (1e3 * 60 * 60 * 24)); a >= 0 && (bt = `${P} (${a}\u5929\u540E)`) } let k = "0", x = [], M = this.config.daily_usage_entity, D = t => t != null && t !== "" && t !== "-" && !isNaN(parseFloat(t)), Q = t => { let e = t.sevenelelist || t.sevenEleList || t.seven_ele_list || []; return Array.isArray(e) && e.length > 0 ? { list: e } : null }; if (M && this.hass.states[M]) { let t = this.hass.states[M], e = t.attributes, a = Q(e); if (a) { x = a.list; for (let d of x) if (D(d.dayElePq)) { k = d.dayElePq; break } } else D(t.state) ? k = t.state : k = e.dayElePq || e.daily_usage || e.dailyUsage || "0" } else { let t = Q(i); if (t) { x = t.list; for (let e of x) if (D(e.dayElePq)) { k = e.dayElePq; break } } else k = i.daily_usage || i.dayElePq || i.dailyUsage || "0" } let T = "", Z = parseFloat(k); if (u > 0 && Z > 0 && h > 0) { let t = Z * h, e = Math.floor(u / t); e < 999 && (T = `\u9884\u8BA1\u53EF\u7528 ${e} \u5929`) } if ((S === 0 || H === 0) && x.length > 0) { let t = new Date, e = t.getFullYear(), a = t.getMonth(); a === 0 && (a = 12, e -= 1); let d = `${e}${a.toString().padStart(2, "0")}`, c = 0, s = 0; x.forEach(p => { p.day && p.day.toString().startsWith(d) && D(p.dayElePq) && (c += parseFloat(p.dayElePq), s++) }), c > 0 && (S === 0 && (S = c), H === 0 && h > 0 && (H = c * h)) } let I = t => t ? t.paylist || t.pay_history || t.payHistory || t.pay_list || t.payList || t.payment_list || t.paymentHistory || [] : [], f = []; if (this.config.payment_entity) { let t = this.hass.states[this.config.payment_entity]; t && (console.log("SGCC Card (Debug): Payment Entity Attributes:", t.attributes), f = I(t.attributes), console.log("SGCC Card (Debug): Extracted PayList:", f)) } if ((!f || f.length === 0) && this.config.usage_entity) { let t = this.hass.states[this.config.usage_entity]; if (t) { let e = I(t.attributes); e && e.length > 0 && (f = e) } } if (!f || f.length === 0) { let t = I(i); t && t.length > 0 && (f = t) } let tt = r``; if (Array.isArray(f) && f.length > 0) {
+      let e = [...f].sort((a, d) => { let c = new Date(a.payDate || a.ymd || a.pay_date || a.date || 0); return new Date(d.payDate || d.ymd || d.pay_date || d.date || 0) - c }).slice(0, 3).map(a => {
+        let d = a.payDate || a.ymd || a.pay_date || a.date || "\u672A\u77E5\u65E5\u671F", c = d.length > 10 ? d.substring(0, 10) : d, s = a.rcvAmt || a.payAmt || a.pay_amt || a.money || a.amt || 0; return r`
               <div class="pay-item">
-                <div class="pay-date">${dateStr}</div>
-                <div class="pay-amt">+ ${parseFloat(amt)['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](639651 ^ 639649)} 元</div> 
+                <div class="pay-date">${c}</div>
+                <div class="pay-amt">+ ${parseFloat(s).toFixed(2)} 元</div> 
               </div>
-            `;
-            }); _0x1d_0xg00 = (762400 ^ 762405) + (925326 ^ 925321); payHistoryHtml = html`
-          <div class="pay-section" @click=${this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079']} style="cursor: pointer;">
+            `}); tt = r`
+          <div class="pay-section" @click=${this._togglePayHistory} style="cursor: pointer;">
              <div class="pay-title" style="color: white; font-weight: bold; opacity: 1;">
                <ha-icon icon="mdi:history" style="--mdc-icon-size: 16px; margin-right: 4px;"></ha-icon>
                最近缴费
              </div>
              <div class="pay-list">
-               ${itemsHtml}
+               ${e}
              </div>
           </div>
-        `;
-        } var _0xe51bc; let fullPayHistoryHtml = html``; _0xe51bc = '\u0061\u0067\u0070\u0065\u0065\u0065'; if (this['\u005F\u0073\u0068\u006F\u0077\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] && payList['\u006C\u0065\u006E\u0067\u0074\u0068'] > (264917 ^ 264917)) {
-            var _0xb07bg = (617169 ^ 617175) + (215790 ^ 215789); const fullSorted = [...payList]['\u0073\u006F\u0072\u0074']((a, b) => { var _0x7g_0x3b3 = (242836 ^ 242845) + (252872 ^ 252875); const da = new Date(a['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || a['\u0079\u006D\u0064'] || a['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || a['\u0064\u0061\u0074\u0065'] || 606030 ^ 606030); _0x7g_0x3b3 = 668724 ^ 668724; var _0x9fde5e; const db = new Date(b['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || b['\u0079\u006D\u0064'] || b['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || b['\u0064\u0061\u0074\u0065'] || 332473 ^ 332473); _0x9fde5e = (559499 ^ 559491) + (907904 ^ 907905); return db - da; }); _0xb07bg = (220224 ^ 220229) + (472327 ^ 472327); var _0x37423a; let totalAmt = 480287 ^ 480287; _0x37423a = '\u0067\u006B\u0069\u0066\u006B\u0062'; const channelStats = {}; fullSorted['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](item => { const amt = parseFloat(item['\u0072\u0063\u0076\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u005F\u0061\u006D\u0074'] || item['\u006D\u006F\u006E\u0065\u0079'] || item['\u0061\u006D\u0074'] || 958383 ^ 958383); const channel = item['\u0063\u0068\u0061\u006E\u0043\u006C\u0073'] || item['\u0063\u0068\u0061\u006E\u004E\u0061\u006D\u0065'] || item['\u0070\u0061\u0079\u004D\u006F\u0064\u0065\u004E\u0061\u006D\u0065'] || "\u9053\u6E20\u4ED6\u5176".split("").reverse().join(""); totalAmt += amt; if (!channelStats[channel]) channelStats[channel] = 995060 ^ 995060; channelStats[channel] += amt; }); var _0x3f2f = (317227 ^ 317229) + (492885 ^ 492883); const fullItemsHtml = fullSorted['\u006D\u0061\u0070'](item => {
-                const date = item['\u0070\u0061\u0079\u0044\u0061\u0074\u0065'] || item['\u0079\u006D\u0064'] || item['\u0070\u0061\u0079\u005F\u0064\u0061\u0074\u0065'] || item['\u0064\u0061\u0074\u0065'] || "\u671F\u65E5\u77E5\u672A".split("").reverse().join(""); var _0x4220bd = (115663 ^ 115659) + (923337 ^ 923340); const dateStr = date['\u006C\u0065\u006E\u0067\u0074\u0068'] > (675593 ^ 675587) ? date['\u0073\u0075\u0062\u0073\u0074\u0072\u0069\u006E\u0067'](400713 ^ 400713, 557866 ^ 557856) : date; _0x4220bd = "hfbgde".split("").reverse().join(""); const amt = item['\u0072\u0063\u0076\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u0041\u006D\u0074'] || item['\u0070\u0061\u0079\u005F\u0061\u006D\u0074'] || item['\u006D\u006F\u006E\u0065\u0079'] || item['\u0061\u006D\u0074'] || 253267 ^ 253267; var _0x9c_0xg90 = (784571 ^ 784571) + (782043 ^ 782034); const channel = item['\u0063\u0068\u0061\u006E\u0043\u006C\u0073'] || item['\u0063\u0068\u0061\u006E\u004E\u0061\u006D\u0065'] || item['\u0070\u0061\u0079\u004D\u006F\u0064\u0065\u004E\u0061\u006D\u0065'] || ''; _0x9c_0xg90 = "lpgede".split("").reverse().join(""); return html`
+        `} let et = r``; if (this._showPayHistory && f.length > 0) {
+      let t = [...f].sort((s, p) => { let b = new Date(s.payDate || s.ymd || s.pay_date || s.date || 0); return new Date(p.payDate || p.ymd || p.pay_date || p.date || 0) - b }), e = 0, a = {}; t.forEach(s => { let p = parseFloat(s.rcvAmt || s.payAmt || s.pay_amt || s.money || s.amt || 0), b = s.chanCls || s.chanName || s.payModeName || "\u5176\u4ED6\u6E20\u9053"; e += p, a[b] || (a[b] = 0), a[b] += p }); let d = t.map(s => {
+        let p = s.payDate || s.ymd || s.pay_date || s.date || "\u672A\u77E5\u65E5\u671F", b = p.length > 10 ? p.substring(0, 10) : p, j = s.rcvAmt || s.payAmt || s.pay_amt || s.money || s.amt || 0, N = s.chanCls || s.chanName || s.payModeName || ""; return r`
             <div class="pay-item" style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: flex-start;">
               <div style="display: flex; flex-direction: column;">
-                 <div class="pay-date" style="font-size: 14px; opacity: 0.9;">${dateStr}</div>
-                 ${channel ? html`<div class="pay-channel" style="font-size: 12px; opacity: 0.5; margin-top: 2px;">${channel}</div>` : ''}
+                 <div class="pay-date" style="font-size: 14px; opacity: 0.9;">${b}</div>
+                 ${N ? r`<div class="pay-channel" style="font-size: 12px; opacity: 0.5; margin-top: 2px;">${N}</div>` : ""}
               </div>
-              <div class="pay-amt" style="font-size: 15px; font-weight: bold;">+ ${parseFloat(amt)['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](642794 ^ 642792)} 元</div> 
+              <div class="pay-amt" style="font-size: 15px; font-weight: bold;">+ ${parseFloat(j).toFixed(2)} 元</div> 
             </div>
-          `;
-            }); _0x3f2f = (877957 ^ 877953) + (837854 ^ 837847); var _0xage25d; const statsHtml = html`
+          `}), c = r`
          <div class="pay-stats" style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 12px; margin-bottom: 0; font-size: 13px;">
              <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px;">
                  <span>缴费总计</span>
-                 <span>${totalAmt['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](692721 ^ 692723)} 元</span>
+                 <span>${e.toFixed(2)} 元</span>
              </div>
-             ${Object['\u006B\u0065\u0079\u0073'](channelStats)['\u006D\u0061\u0070'](chan => html`
+             ${Object.keys(a).map(s => r`
                  <div style="display: flex; justify-content: space-between; opacity: 0.8; margin-bottom: 4px;">
-                    <span>${chan}</span>
-                    <span>${channelStats[chan]['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](248349 ^ 248351)} 元</span>
+                    <span>${s}</span>
+                    <span>${a[s].toFixed(2)} 元</span>
                  </div>
              `)}
          </div>
-      `; _0xage25d = "dhombi".split("").reverse().join(""); fullPayHistoryHtml = html`
-          <div class="modal-overlay" @click=${this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079']}>
-            <div class="modal-content" style="max-height: 60vh; max-width: 90%; width: 360px; display: flex; flex-direction: column;" @click=${e => e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E']()}>
+      `; et = r`
+          <div class="modal-overlay" @click=${this._togglePayHistory}>
+            <div class="modal-content" style="max-height: 60vh; max-width: 90%; width: 360px; display: flex; flex-direction: column;" @click=${s => s.stopPropagation()}>
               <div class="modal-header">
-                <h3>缴费记录 (${fullSorted['\u006C\u0065\u006E\u0067\u0074\u0068']}条)</h3>
-                <ha-icon icon="mdi:close" @click=${this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0050\u0061\u0079\u0048\u0069\u0073\u0074\u006F\u0072\u0079']} style="cursor: pointer;"></ha-icon>
+                <h3>缴费记录 (${t.length}条)</h3>
+                <ha-icon icon="mdi:close" @click=${this._togglePayHistory} style="cursor: pointer;"></ha-icon>
               </div>
               
               <div style="padding: 16px 16px 8px 16px; flex-shrink: 0;">
-                ${statsHtml}
+                ${c}
               </div>
 
               <div class="pay-full-list" style="padding: 0 16px 16px 16px; overflow-y: auto; flex: 1;">
-                 ${fullItemsHtml}
+                 ${d}
               </div>
             </div>
           </div>
-        `;
-        } var _0xe9bded; let historyHtml = html``; _0xe9bded = 848200 ^ 848206; if (this['\u005F\u0073\u0068\u006F\u0077\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] && rawDailyList['\u006C\u0065\u006E\u0067\u0074\u0068'] > (498248 ^ 498248)) {
-            let targetYear = new Date()['\u0067\u0065\u0074\u0046\u0075\u006C\u006C\u0059\u0065\u0061\u0072'](); let targetMonth = new Date()['\u0067\u0065\u0074\u004D\u006F\u006E\u0074\u0068'](); let maxDateInt = 936331 ^ 936331; const dataMap = new Map(); rawDailyList['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](item => { if (item['\u0064\u0061\u0079']) { const dInt = parseInt(item['\u0064\u0061\u0079']); if (dInt > maxDateInt) { maxDateInt = dInt; } if (isValidUsage(item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'])) { const usage = parseFloat(item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071']); const cost = (usage * currentPrice)['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](370636 ^ 370638); dataMap['\u0073\u0065\u0074'](item['\u0064\u0061\u0079'], { "usage": usage, "cost": cost, '\u0069\u0074\u0065\u006D': item }); } } }); if (maxDateInt > (179577 ^ 179577)) { var _0xd1c = (597473 ^ 597479) + (955197 ^ 955196); const s = maxDateInt['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067'](); _0xd1c = '\u006C\u0068\u0064\u006A\u006B\u0070'; targetYear = parseInt(s['\u0073\u0075\u0062\u0073\u0074\u0072'](147552 ^ 147552, 862019 ^ 862023)); targetMonth = parseInt(s['\u0073\u0075\u0062\u0073\u0074\u0072'](398925 ^ 398921, 711269 ^ 711271)) - (853837 ^ 853836); } var _0x5378f = (752083 ^ 752082) + (949286 ^ 949280); const daysInMonth = new Date(targetYear, targetMonth + (425305 ^ 425304), 384427 ^ 384427)['\u0067\u0065\u0074\u0044\u0061\u0074\u0065'](); _0x5378f = (477101 ^ 477093) + (574786 ^ 574790); const firstDayObj = new Date(targetYear, targetMonth, 105444 ^ 105445); const firstDayWeek = firstDayObj['\u0067\u0065\u0074\u0044\u0061\u0079']() === (509567 ^ 509567) ? 923968 ^ 923975 : firstDayObj['\u0067\u0065\u0074\u0044\u0061\u0079'](); const emptyCells = []; for (let i = 298261 ^ 298260; i < firstDayWeek; i++) { emptyCells['\u0070\u0075\u0073\u0068'](html`<div class="calendar-cell empty"></div>`); } const dayCells = []; for (let d = 472650 ^ 472651; d <= daysInMonth; d++) {
-                const mStr = (targetMonth + (989995 ^ 989994))['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067']()['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](275322 ^ 275320, "\u0030"); var _0xc30e = (323939 ^ 323939) + (575473 ^ 575481); const dStr = d['\u0074\u006F\u0053\u0074\u0072\u0069\u006E\u0067']()['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](604395 ^ 604393, "\u0030"); _0xc30e = 925333 ^ 925329; const dateKey = `${targetYear}${mStr}${dStr}`; const dayData = dataMap['\u0067\u0065\u0074'](dateKey); var _0x948d9b = (613848 ^ 613853) + (725671 ^ 725678); const hasUsage = dayData !== undefined; _0x948d9b = (210910 ^ 210910) + (388180 ^ 388176); let usage = hasUsage ? dayData['\u0075\u0073\u0061\u0067\u0065'] : 587719 ^ 587719; var _0xbfefba; let usageStr = hasUsage ? usage['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](168722 ^ 168720) : "\u002D"; _0xbfefba = (389574 ^ 389573) + (350148 ^ 350146); var _0x15bbf; let costStr = hasUsage ? dayData['\u0063\u006F\u0073\u0074'] : ''; _0x15bbf = (504601 ^ 504604) + (958959 ^ 958956); if (hasUsage) { } let colorClass = ''; if (hasUsage) { if (usage > (211243 ^ 211263)) colorClass = "\u0068\u0069\u0067\u0068"; else if (usage > (539561 ^ 539555)) colorClass = "\u006D\u0065\u0064\u0069\u0075\u006D"; else colorClass = "\u006C\u006F\u0077"; } var _0x63934e; const contentHtml = hasUsage ? html`
-              <div class="cell-usage">${usageStr}<span class="unit">°</span></div>
-              <div class="cell-cost">${costStr}</div>
-            `: html`
+        `} let at = r``; if (this._showHistory && x.length > 0) {
+      let t = new Date().getFullYear(), e = new Date().getMonth(), a = 0, d = new Map; if (x.forEach(l => { if (l.day) { let o = parseInt(l.day); if (o > a && D(l.dayElePq) && (a = o), D(l.dayElePq)) { let _ = parseFloat(l.dayElePq), w = (_ * h).toFixed(2); d.set(l.day, { usage: _, cost: w, item: l }) } } }), a > 0) { let l = a.toString(); t = parseInt(l.substr(0, 4)), e = parseInt(l.substr(4, 2)) - 1 } let c = new Date(t, e + 1, 0).getDate(), s = new Date(t, e, 1), p = s.getDay() === 0 ? 7 : s.getDay(), b = []; for (let l = 1; l < p; l++)b.push(r`<div class="calendar-cell empty"></div>`); let j = []; for (let l = 1; l <= c; l++) {
+        let o = (e + 1).toString().padStart(2, "0"), _ = l.toString().padStart(2, "0"), w = `${t}${o}${_}`, $ = d.get(w), m = $ !== void 0, E = m ? $.usage : 0, q = m ? E.toFixed(2) : "-", V = m ? $.cost : "", C = ""; m && (E > 20 ? C = "high" : E > 10 ? C = "medium" : C = "low"); let O = m ? r`
+              <div class="cell-usage">${q}<span class="unit">°</span></div>
+              <div class="cell-cost">${V}</div>
+            `: r`
               <div class="cell-usage" style="opacity: 0.5">-</div>
-            `; _0x63934e = "jegkaj".split("").reverse().join(""); dayCells['\u0070\u0075\u0073\u0068'](html`
-          <div class="calendar-cell ${hasUsage ? "\u0068\u0061\u0073\u002D\u0064\u0061\u0074\u0061" : "atad-on".split("").reverse().join("")} ${colorClass}"
-               @click=${e => hasUsage ? this['\u005F\u0073\u0068\u006F\u0077\u0044\u0061\u0079\u0044\u0065\u0074\u0061\u0069\u006C'](e, dayData, dateKey) : null}>
-            <div class="cell-date">${d}</div>
+            `; j.push(r`
+          <div class="calendar-cell ${m ? "has-data" : "no-data"} ${C}"
+               @click=${nt => m ? this._showDayDetail(nt, $, w) : null}>
+            <div class="cell-date">${l}</div>
             <div class="cell-content">
-              ${contentHtml}
+              ${O}
             </div>
           </div>
-        `);
-            } let monthTotalUsage = 384009 ^ 384009; var _0x122f7b = (476255 ^ 476250) + (986761 ^ 986767); let monthTotalCost = 161935 ^ 161935; _0x122f7b = 873236 ^ 873234; dataMap['\u0066\u006F\u0072\u0045\u0061\u0063\u0068']((val, key) => { monthTotalUsage += val['\u0075\u0073\u0061\u0067\u0065']; monthTotalCost += parseFloat(val['\u0063\u006F\u0073\u0074']); }); var _0x58f57f; let detailPopupHtml = html``; _0x58f57f = 239637 ^ 239633; if (this['\u005F\u0073\u0065\u006C\u0065\u0063\u0074\u0065\u0064\u0044\u0061\u0079']) {
-                var _0x4b6ce; const d = this['\u005F\u0073\u0065\u006C\u0065\u0063\u0074\u0065\u0064\u0044\u0061\u0079']; _0x4b6ce = (433056 ^ 433056) + (544623 ^ 544622); const item = d['\u0064\u0061\u0074\u0061']['\u0069\u0074\u0065\u006D']; const valT = parseFloat(item['\u0074\u0068\u0069\u0073\u0054\u0050\u0071'] || item['\u0073\u0070\u0069\u006B\u0065\u0045\u006C\u0065\u0050\u0071'] || item['\u0065\u006C\u0065\u005F\u0073\u005F\u0070\u0071'] || item['\u0064\u0061\u0079\u0053\u0070\u0069\u006B\u0065\u0045\u006C\u0065\u0050\u0071'] || item['\u0073\u0050\u0071'] || 797323 ^ 797323); var _0xbd5c = (410890 ^ 410893) + (489892 ^ 489890); const valP = parseFloat(item['\u0074\u0068\u0069\u0073\u0050\u0050\u0071'] || item['\u0070\u0065\u0061\u006B\u0045\u006C\u0065\u0050\u0071'] || item['\u0065\u006C\u0065\u005F\u0070\u005F\u0070\u0071'] || item['\u0064\u0061\u0079\u0050\u0065\u0061\u006B\u0045\u006C\u0065\u0050\u0071'] || item['\u0070\u0050\u0071'] || 318797 ^ 318797); _0xbd5c = 663483 ^ 663480; const valN = parseFloat(item['\u0074\u0068\u0069\u0073\u004E\u0050\u0071'] || item['\u0066\u006C\u0061\u0074\u0045\u006C\u0065\u0050\u0071'] || item['\u0065\u006C\u0065\u005F\u006E\u005F\u0070\u0071'] || item['\u0064\u0061\u0079\u0046\u006C\u0061\u0074\u0045\u006C\u0065\u0050\u0071'] || item['\u006E\u0050\u0071'] || item['\u0066\u0050\u0071'] || 785211 ^ 785211); var _0x71f65b; const valV = parseFloat(item['\u0074\u0068\u0069\u0073\u0056\u0050\u0071'] || item['\u0076\u0061\u006C\u006C\u0065\u0079\u0045\u006C\u0065\u0050\u0071'] || item['\u0065\u006C\u0065\u005F\u0076\u005F\u0070\u0071'] || item['\u0064\u0061\u0079\u0056\u0061\u006C\u006C\u0065\u0079\u0045\u006C\u0065\u0050\u0071'] || item['\u0076\u0050\u0071'] || item['\u0067\u0050\u0071'] || 535475 ^ 535475); _0x71f65b = (472512 ^ 472516) + (142797 ^ 142792); const totalVal = parseFloat(item['\u0064\u0061\u0079\u0045\u006C\u0065\u0050\u0071'] || valT + valP + valN + valV || 407867 ^ 407867); var _0xc05b5e; let safeTotal = totalVal || 575591 ^ 575590; _0xc05b5e = '\u0068\u0063\u0071\u0070\u0064\u006F'; var _0x6ef8a = (821616 ^ 821623) + (317186 ^ 317189); const pT = valT / safeTotal * (297486 ^ 297578); _0x6ef8a = 801781 ^ 801781; const pP = valP / safeTotal * (555702 ^ 555730); var _0x5a2g7e = (756511 ^ 756508) + (739494 ^ 739492); const pN = valN / safeTotal * (327480 ^ 327516); _0x5a2g7e = (621422 ^ 621419) + (991082 ^ 991084); const pV = valV / safeTotal * (696939 ^ 696847); const endT = pT; var _0xf_0x343 = (443969 ^ 443976) + (921056 ^ 921058); const endP = endT + pP; _0xf_0x343 = 540851 ^ 540853; var _0x4d5ba; const endN = endP + pN; _0x4d5ba = '\u006A\u006E\u0064\u006A\u0065\u006E'; var _0x2628a = (442031 ^ 442022) + (782363 ^ 782363); const cT = "D39BEF#".split("").reverse().join(""); _0x2628a = (389681 ^ 389682) + (696202 ^ 696207); var _0x57424a = (317704 ^ 317697) + (954880 ^ 954883); const cP = "\u0023\u0032\u0039\u0044\u0039\u0041\u0038"; _0x57424a = 131680 ^ 131683; var _0x87ea8e; const cN = "\u0023\u0030\u0030\u0042\u0041\u0046\u0046"; _0x87ea8e = "dccckb".split("").reverse().join(""); var _0xc_0xca9; const cV = "\u0023\u0036\u0030\u0037\u0038\u0046\u0036"; _0xc_0xca9 = 286580 ^ 286577; const conicStyle = `
+        `)
+      } let N = 0, it = 0; d.forEach((l, o) => { N += l.usage, it += parseFloat(l.cost) }); let st = r``; if (this._selectedDay) {
+        let l = this._selectedDay, o = l.data.item, _ = parseFloat(o.thisTPq || o.spikeElePq || o.ele_s_pq || o.daySpikeElePq || o.sPq || 0), w = parseFloat(o.thisPPq || o.peakElePq || o.ele_p_pq || o.dayPeakElePq || o.pPq || 0), $ = parseFloat(o.thisNPq || o.flatElePq || o.ele_n_pq || o.dayFlatElePq || o.nPq || o.fPq || 0), m = parseFloat(o.thisVPq || o.valleyElePq || o.ele_v_pq || o.dayValleyElePq || o.vPq || o.gPq || 0), E = parseFloat(o.dayElePq || _ + w + $ + m || 0), q = E || 1, V = _ / q * 100, C = w / q * 100, O = $ / q * 100, nt = m / q * 100, B = V, Y = B + C, lt = Y + O, ot = "#FEB93D", dt = "#29D9A8", rt = "#00BAFF", ct = "#6078F6", vt = `
           width: 100%; 
           height: 100%; 
           border-radius: 50%; 
           background: conic-gradient(
-            ${cT} 0% ${endT}%, 
-            ${cP} ${endT}% ${endP}%, 
-            ${cN} ${endP}% ${endN}%, 
-            ${cV} ${endN}% 100%
+            ${ot} 0% ${B}%, 
+            ${dt} ${B}% ${Y}%, 
+            ${rt} ${Y}% ${lt}%, 
+            ${ct} ${lt}% 100%
           );
           -webkit-mask: radial-gradient(closest-side, transparent 75%, black 76%);
           mask: radial-gradient(closest-side, transparent 75%, black 76%);
-        `; const renderLegendItem = (label, val, color) => {
-                    if (!val || val <= (115818 ^ 115818)) return ''; return html`
+        `, U = (R, G, xt) => !G || G <= 0 ? "" : r`
                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; font-size: 13px;">
                   <div style="display: flex; align-items: center;">
-                    <span style="width: 8px; height: 8px; border-radius: 50%; background: ${color}; margin-right: 6px;"></span>
-                    <span style="opacity: 0.9;">${label}</span>
+                    <span style="width: 8px; height: 8px; border-radius: 50%; background: ${xt}; margin-right: 6px;"></span>
+                    <span style="opacity: 0.9;">${R}</span>
                   </div>
-                  <span style="font-weight: bold;">${val['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](677153 ^ 677155)} <span style="font-size: 10px; opacity: 0.7;">度</span></span>
+                  <span style="font-weight: bold;">${G.toFixed(2)} <span style="font-size: 10px; opacity: 0.7;">度</span></span>
                </div>
-             `;
-                }; detailPopupHtml = html`
-          <div class="detail-popup-overlay" @click=${this['\u005F\u0063\u006C\u006F\u0073\u0065\u0044\u0061\u0079\u0044\u0065\u0074\u0061\u0069\u006C']} style="position: absolute; top:0; left:0; right:0; bottom:0; z-index: 101; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(2px);">
-            <div class="detail-card" @click=${e => e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E']()} 
+             `; st = r`
+          <div class="detail-popup-overlay" @click=${this._closeDayDetail} style="position: absolute; top:0; left:0; right:0; bottom:0; z-index: 101; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(2px);">
+            <div class="detail-card" @click=${R => R.stopPropagation()} 
                  style="background: #1e293b; padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); width: 85%; max-width: 320px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: popIn 0.2s ease-out;">
               
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <div style="font-size: 16px; font-weight: bold;">📅 ${d['\u0064\u0061\u0074\u0065\u004B\u0065\u0079']['\u0073\u0075\u0062\u0073\u0074\u0072'](850689 ^ 850689, 713267 ^ 713271)}-${d['\u0064\u0061\u0074\u0065\u004B\u0065\u0079']['\u0073\u0075\u0062\u0073\u0074\u0072'](937216 ^ 937220, 442475 ^ 442473)}-${d['\u0064\u0061\u0074\u0065\u004B\u0065\u0079']['\u0073\u0075\u0062\u0073\u0074\u0072'](811519 ^ 811513, 714783 ^ 714781)}</div>
-                <div style="background: rgba(255,255,255,0.1); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer;" @click=${this['\u005F\u0063\u006C\u006F\u0073\u0065\u0044\u0061\u0079\u0044\u0065\u0074\u0061\u0069\u006C']}>
+                <div style="font-size: 16px; font-weight: bold;">📅 ${l.dateKey.substr(0, 4)}-${l.dateKey.substr(4, 2)}-${l.dateKey.substr(6, 2)}</div>
+                <div style="background: rgba(255,255,255,0.1); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer;" @click=${this._closeDayDetail}>
                   <ha-icon icon="mdi:close" style="--mdc-icon-size: 18px; color: rgba(255,255,255,0.9);"></ha-icon>
                 </div>
               </div>
@@ -143,26 +136,26 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                  <!-- 环形图 -->
                  <div style="width: 120px; height: 120px; position: relative; margin: 0 auto 16px auto;">
                     <!-- 1. 实际的圆环 (背景+Mask) -->
-                    <div style="${conicStyle} position: absolute; top: 0; left: 0;"></div>
+                    <div style="${vt} position: absolute; top: 0; left: 0;"></div>
                     
                     <!-- 2. 中心的文字 (浮在上面) -->
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none;">
                        <span style="font-size: 12px; opacity: 0.7;">总电量</span>
-                       <span style="font-size: 18px; font-weight: bold; color: #fff;">${totalVal['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](656250 ^ 656248)}</span>
+                       <span style="font-size: 18px; font-weight: bold; color: #fff;">${E.toFixed(2)}</span>
                     </div>
                  </div>
 
                  <!-- 图例列表 -->
                  <div class="legend-list" style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 12px;">
-                     ${renderLegendItem("\u5C16\u6BB5", valT, cT)}
-                     ${renderLegendItem("\u5CF0\u6BB5", valP, cP)}
-                     ${renderLegendItem("\u5E73\u6BB5", valN, cN)}
-                     ${renderLegendItem("\u6BB5\u8C37".split("").reverse().join(""), valV, cV)}
+                     ${U("\u5C16\u6BB5", _, ot)}
+                     ${U("\u5CF0\u6BB5", w, dt)}
+                     ${U("\u5E73\u6BB5", $, rt)}
+                     ${U("\u8C37\u6BB5", m, ct)}
                  </div>
                  
                  <div style="margin-top: 16px; text-align: center; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
                    <div style="font-size: 12px; opacity: 0.7; margin-bottom: 2px;">预估电费</div>
-                   <div style="font-size: 20px; font-weight: bold; color: #fbbf24;">¥ ${d['\u0064\u0061\u0074\u0061']['\u0063\u006F\u0073\u0074']}</div>
+                   <div style="font-size: 20px; font-weight: bold; color: #fbbf24;">¥ ${l.data.cost}</div>
                  </div>
               </div>
             </div>
@@ -173,15 +166,14 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
               to { transform: scale(1); opacity: 1; }
             }
           </style>
-        `;
-            } historyHtml = html`
-          <div class="modal-overlay" @click=${this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0048\u0069\u0073\u0074\u006F\u0072\u0079']}>
-            ${detailPopupHtml}
-            <div class="modal-content" @click=${e => e['\u0073\u0074\u006F\u0070\u0050\u0072\u006F\u0070\u0061\u0067\u0061\u0074\u0069\u006F\u006E']()}>
+        `} at = r`
+          <div class="modal-overlay" @click=${this._toggleHistory}>
+            ${st}
+            <div class="modal-content" @click=${l => l.stopPropagation()}>
               <div class="modal-header">
-                <h3>📅 ${targetYear}年${targetMonth + (189058 ^ 189059)}月用电日历</h3>
+                <h3>📅 ${t}年${e + 1}月用电日历</h3>
                 <div style="display: flex; gap: 16px;">
-                  <ha-icon icon="mdi:close" @click=${this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0048\u0069\u0073\u0074\u006F\u0072\u0079']}></ha-icon>
+                  <ha-icon icon="mdi:close" @click=${this._toggleHistory}></ha-icon>
                 </div>
               </div>
 
@@ -191,43 +183,42 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 </div>
 
                 <div class="calendar-grid">
-                  ${emptyCells}
-                  ${dayCells}
+                  ${b}
+                  ${j}
                 </div>
 
                 <div class="calendar-footer">
                   <div class="footer-item">
                     <span>本月总电量</span>
-                    <div class="footer-value">${monthTotalUsage['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](243645 ^ 243647)} <span class="unit">度</span></div>
+                    <div class="footer-value">${N.toFixed(2)} <span class="unit">度</span></div>
                   </div>
                   <div class="footer-item">
                     <span>本月预估电费</span>
-                    <div class="footer-value coin">${monthTotalCost['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](925174 ^ 925172)} <span class="unit">元</span></div>
+                    <div class="footer-value coin">${it.toFixed(2)} <span class="unit">元</span></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          `;
-        } return html`
+          `} return r`
           <ha-card style="position: relative;">
-            ${historyHtml}
+            ${at}
         <div class="card-content">
           <div class="header">
             <div class="balance-title">
               <ha-icon icon="mdi:flash"></ha-icon>
-              <span>${this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0074\u0069\u0074\u006C\u0065'] || "\u56FD\u5BB6\u7535\u7F51\u0020\u0039\u0035\u0035\u0039\u0038"}</span>
+              <span>${this.config.title || "\u56FD\u5BB6\u7535\u7F51 95598"}</span>
             </div>
-            ${updateTime ? html`<div class="header-time">更新于 ${updateTime}</div>` : ''}
+            ${L ? r`<div class="header-time">更新于 ${L}</div>` : ""}
           </div>
 
           <div class="balance-container">
             <div style="font-size: 14px; opacity: 0.8; margin-bottom: 4px;">电费余额</div>
             <div class="balance-value">
-              <span>${balance['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](613769 ^ 613771)}</span>
+              <span>${u.toFixed(2)}</span>
               <span class="unit">元</span>
             </div>
-            ${estimatedDaysText ? html`<div style="font-size: 12px; opacity: 0.7; margin-top: 4px;">${estimatedDaysText}</div>` : ''}
+            ${T ? r`<div style="font-size: 12px; opacity: 0.7; margin-top: 4px;">${T}</div>` : ""}
           </div>
 
           <div class="data-grid">
@@ -238,20 +229,20 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 <span>预存金额</span>
               </div>
               <div class="data-value">
-                ${monthlyCost['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](382110 ^ 382108)}
+                ${X.toFixed(2)}
                 <span class="data-unit">元</span>
               </div>
             </div>
 
             <!-- 第一行 2: 日用电量 (可点击) -->
-            <div class="data-item ${this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0061\u0062\u006C\u0065\u005F\u0064\u0061\u0069\u006C\u0079\u005F\u0063\u0061\u006C\u0065\u006E\u0064\u0061\u0072'] !== false ? "elbakcilc".split("").reverse().join("") : ''}" 
-                 @click=${this['\u0063\u006F\u006E\u0066\u0069\u0067']['\u0065\u006E\u0061\u0062\u006C\u0065\u005F\u0064\u0061\u0069\u006C\u0079\u005F\u0063\u0061\u006C\u0065\u006E\u0064\u0061\u0072'] !== false ? this['\u005F\u0074\u006F\u0067\u0067\u006C\u0065\u0048\u0069\u0073\u0074\u006F\u0072\u0079'] : null}>
+            <div class="data-item ${this.config.enable_daily_calendar !== !1 ? "clickable" : ""}" 
+                 @click=${this.config.enable_daily_calendar !== !1 ? this._toggleHistory : null}>
               <div class="data-label">
                 <ha-icon icon="mdi:calendar-today"></ha-icon>
                 <span>日用电量</span>
               </div>
               <div class="data-value">
-                ${parseFloat(dailyUsage)['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](714668 ^ 714670)}
+                ${parseFloat(k).toFixed(2)}
                 <span class="data-unit">度</span>
               </div>
             </div>
@@ -263,7 +254,7 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 <span>上月用电</span>
               </div>
               <div class="data-value">
-                ${monthlyUsage['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](759746 ^ 759746)}
+                ${S.toFixed(0)}
                 <span class="data-unit">度</span>
               </div>
             </div>
@@ -275,7 +266,7 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 <span>上月电费</span>
               </div>
               <div class="data-value">
-                ${lastMonthCost['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](718647 ^ 718645)}
+                ${H.toFixed(2)}
                 <span class="data-unit">元</span>
               </div>
             </div>
@@ -287,7 +278,7 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 <span>年总电量</span>
               </div>
               <div class="data-value">
-                ${totalYearPq['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](626969 ^ 626969)}
+                ${F.toFixed(0)}
                 <span class="data-unit">度</span>
               </div>
             </div>
@@ -299,7 +290,7 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
                 <span>年总电费</span>
               </div>
               <div class="data-value">
-                ${totalYearCost['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](133899 ^ 133897)}
+                ${A.toFixed(2)}
                 <span class="data-unit">元</span>
               </div>
             </div>
@@ -307,33 +298,33 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
 
           <div class="tier-section">
             <div class="tier-header">
-              <div class="tier-label">📊 当前阶梯: ${tierLevel}</div>
-              <div class="tier-price">单价: ¥${currentPrice['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](972108 ^ 972110)}/度</div>
+              <div class="tier-label">📊 当前阶梯: ${g}</div>
+              <div class="tier-price">单价: ¥${h.toFixed(2)}/度</div>
             </div>
 
             <div class="progress-section">
               <div class="progress-title">
                 <span>年度用电进度</span>
-                <span style="font-size: 12px; opacity: 0.8">${yearlyUsage['\u0074\u006F\u0046\u0069\u0078\u0065\u0064'](938406 ^ 938406)} 度</span>
+                <span style="font-size: 12px; opacity: 0.8">${y.toFixed(0)} 度</span>
               </div>
               
               <!-- 组合进度条容器 -->
               <div class="combined-progress">
                 <!-- 一档 -->
                 <div class="progress-segment segment-1">
-                  <div class="segment-fill tier1" style="width: ${tier1Percent}%"></div>
-                  <div class="segment-marker">${tier1Max}</div>
+                  <div class="segment-fill tier1" style="width: ${mt}%"></div>
+                  <div class="segment-marker">${v}</div>
                 </div>
                 
                 <!-- 二档 -->
                 <div class="progress-segment segment-2">
-                  <div class="segment-fill tier2" style="width: ${tier2Percent}%"></div>
-                  <div class="segment-marker">${tier2Max}</div>
+                  <div class="segment-fill tier2" style="width: ${ut}%"></div>
+                  <div class="segment-marker">${z}</div>
                 </div>
                 
                 <!-- 三档 -->
                 <div class="progress-segment segment-3">
-                  <div class="segment-fill tier3" style="width: ${Math['\u006D\u0069\u006E'](tier3Usage / (tier2Max - tier1Max) * (421649 ^ 421749), 993565 ^ 993657)}%"></div>
+                  <div class="segment-fill tier3" style="width: ${Math.min(J / (z - v) * 100, 100)}%"></div>
                 </div>
               </div>
               
@@ -345,14 +336,13 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
             </div>
           </div>
           
-          ${payHistoryHtml}
-          ${fullPayHistoryHtml}
+          ${tt}
+          ${et}
 
         </div>
       </ha-card>
-    `;
-    } static get styles() {
-        return css`
+    `} static get styles() {
+    return gt`
       ha-card {
         padding: 16px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -805,6 +795,5 @@ import { LitElement, html, css } from "\u0068\u0074\u0074\u0070\u0073\u003A\u002
         right: 6px;
         font-size: 10px;
         opacity: 0.5;
-      }`;
-    }
-} customElements['\u0064\u0065\u0066\u0069\u006E\u0065']("drac-yticirtcele-ccgs".split("").reverse().join(""), SgccElectricityCard); window['\u0063\u0075\u0073\u0074\u006F\u006D\u0043\u0061\u0072\u0064\u0073'] = window['\u0063\u0075\u0073\u0074\u006F\u006D\u0043\u0061\u0072\u0064\u0073'] || []; window['\u0063\u0075\u0073\u0074\u006F\u006D\u0043\u0061\u0072\u0064\u0073']['\u0070\u0075\u0073\u0068']({ '\u0074\u0079\u0070\u0065': "\u0073\u0067\u0063\u0063\u002D\u0065\u006C\u0065\u0063\u0074\u0072\u0069\u0063\u0069\u0074\u0079\u002D\u0063\u0061\u0072\u0064", '\u006E\u0061\u006D\u0065': "\u0053\u0068\u0061\u006F\u0062\u006F\u0072\u0020\u7535\u8D39\u5361\u7247", '\u0064\u0065\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006F\u006E': 'Shaobor 电费查询卡片', "preview": !![] }); console['\u0069\u006E\u0066\u006F']("\u0025\u0063\u0020\u0053\u0048\u0041\u004F\u0042\u004F\u0052\u002D\u0045\u004C\u0045\u0043\u0054\u0052\u0049\u0043\u0049\u0054\u0059\u002D\u0043\u0041\u0052\u0044\u0020\u0025\u0063\u0020\u0076\u0032\u002E\u0030\u002E\u0030\u0020\u0028\u004C\u0069\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0029\u0020", "\u0063\u006F\u006C\u006F\u0072\u003A\u0020\u0077\u0068\u0069\u0074\u0065\u003B\u0020\u0062\u0061\u0063\u006B\u0067\u0072\u006F\u0075\u006E\u0064\u003A\u0020\u0023\u0036\u0036\u0037\u0065\u0065\u0061\u003B\u0020\u0066\u006F\u006E\u0074\u002D\u0077\u0065\u0069\u0067\u0068\u0074\u003A\u0020\u0062\u006F\u006C\u0064\u003B", "\u0063\u006F\u006C\u006F\u0072\u003A\u0020\u0023\u0036\u0036\u0037\u0065\u0065\u0061\u003B\u0020\u0062\u0061\u0063\u006B\u0067\u0072\u006F\u0075\u006E\u0064\u003A\u0020\u0077\u0068\u0069\u0074\u0065\u003B\u0020\u0066\u006F\u006E\u0074\u002D\u0077\u0065\u0069\u0067\u0068\u0074\u003A\u0020\u0062\u006F\u006C\u0064\u003B");
+      }`}
+}; customElements.define("sgcc-electricity-card", W); window.customCards = window.customCards || []; window.customCards.push({ type: "sgcc-electricity-card", name: "Shaobor \u7535\u8D39\u5361\u7247", description: "Shaobor \u7535\u8D39\u67E5\u8BE2\u5361\u7247", preview: !0 }); console.info("%c SHAOBOR-ELECTRICITY-CARD %c v2.0.1 (LitElement) ", "color: white; background: #667eea; font-weight: bold;", "color: #667eea; background: white; font-weight: bold;");
